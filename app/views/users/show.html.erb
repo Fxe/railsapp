@@ -1,0 +1,10 @@
+<h1>Users#show</h1>
+<%= @user.name %><%= @user.email %>
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        
+      </ol>
+      
+    <% end %>
+<p>Find me in app/views/users/show.html.erb</p>

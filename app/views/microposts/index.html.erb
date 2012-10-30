@@ -1,0 +1,13 @@
+<%= render 'shared/micropost_form' if signed_in? %>
+
+<% @micropost.each do |m|  %>
+<h1><%= m.title%></h1>
+<%= m.content %><br>
+<%= time_ago_in_words(m.created_at) %><br>
+<% if current_user && m.user_id == current_user.id %>
+  <%= link_to "delete", m, :method => :delete,
+                                   :data => { :confirm => "You sure?" },
+                                   :title => m.content %>
+<% end%>
+
+<% end %>
